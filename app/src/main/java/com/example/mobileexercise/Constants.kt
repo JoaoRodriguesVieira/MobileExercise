@@ -12,7 +12,6 @@ object Constants {
     const val BASE_URL : String = "https://api.flickr.com/"
     const val METHOD1 : String = "flickr.photos.getSizes"
     const val METHOD2 : String = "flickr.photos.search"
-    const val PHOTO_ID: String = "7803551540"
     const val FORMAT : String = "json"
     const val NO_JSON_CALL_BACK : Int = 1
     const val TAGS : String = "bird"

@@ -20,6 +20,7 @@ import java.net.URL
 import java.util.*
 import kotlin.collections.ArrayList
 
+private var photoIncreaser : Int = 0
 
 private var sizeList : SizesResponse? = null
 private var photoList : PhotoResponse? = null
@@ -111,10 +112,12 @@ class MainActivity : AppCompatActivity() {
                 val listCall: Call<SizesResponse> = photosGetSize.getImages(
                     Constants.METHOD1,
                     Constants.APP_ID,
-                    Constants.PHOTO_ID,
+                    photoList!!.photos.photo[photoIncreaser].id,
                     Constants.FORMAT,
                     Constants.NO_JSON_CALL_BACK
                 )
+                
+                photoIncreaser++
 
                 listCall.enqueue(object : Callback<SizesResponse> {
                     override fun onResponse(
